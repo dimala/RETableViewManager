@@ -320,8 +320,8 @@
         RETableViewItem *item = [section.items objectAtIndex:indexPath.row];
         if (item.deletionHandlerWithCompletion) {
             item.deletionHandlerWithCompletion(item, ^{
-                [section removeItemAtIndex:indexPath.row];
-                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//                [section removeItemAtIndex:indexPath.row];
+//                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                 
                 for (NSInteger i = indexPath.row; i < section.items.count; i++) {
                     RETableViewItem *afterItem = [[section items] objectAtIndex:i];
@@ -332,8 +332,8 @@
         } else {
             if (item.deletionHandler)
                 item.deletionHandler(item);
-            [section removeItemAtIndex:indexPath.row];
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//            [section removeItemAtIndex:indexPath.row];
+//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             
             for (NSInteger i = indexPath.row; i < section.items.count; i++) {
                 RETableViewItem *afterItem = [[section items] objectAtIndex:i];
